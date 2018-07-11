@@ -9,7 +9,7 @@ import edu.princeton.cs.algs4.StdIn;
  * Date: 2018-07-10
  * Time: 21:34
  */
-public class Exx05 {
+public class Ex05 {
     public static void main(String[] args) {
          double x  = StdIn.readDouble();
          double y = StdIn.readDouble();
