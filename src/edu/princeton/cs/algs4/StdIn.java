@@ -1,12 +1,3 @@
-package edu.princeton.cs.algs4;
-
-/**
- * Created with IntelliJ IDEA.
- * Description:
- * User: MrJason
- * Date: 2018-07-10
- * Time: 21:28
- */
 /******************************************************************************
  *  Compilation:  javac StdIn.java
  *  Execution:    java StdIn   (interactive test of basic functionality)
@@ -16,6 +7,7 @@ package edu.princeton.cs.algs4;
  *
  ******************************************************************************/
 
+package edu.princeton.cs.algs4;
 
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -38,7 +30,7 @@ import java.util.regex.Pattern;
  *  </ul>
  *  <p>
  *  Generally, it is best not to mix functions from the different
- *  categories in the same program.
+ *  categories in the same program. 
  *  <p>
  *  <b>Reading tokens from standard input one at a time,
  *  and converting to numbers and strings.</b>
@@ -79,7 +71,7 @@ import java.util.regex.Pattern;
  *  </ul>
  *  <p>
  *  The first method returns true if standard input has more input (including whitespace).
- *  The second method reads and returns the next character of input on standard
+ *  The second method reads and returns the next character of input on standard 
  *  input (possibly a whitespace character).
  *  <p>
  *  As an example, the following code fragment reads characters from standard input,
@@ -99,7 +91,7 @@ import java.util.regex.Pattern;
  *  </ul>
  *  <p>
  *  The first method returns true if standard input has more input (including whitespace).
- *  The second method reads and returns the remaining portion of
+ *  The second method reads and returns the remaining portion of 
  *  the next line of input on standard input (possibly whitespace),
  *  discarding the trailing line separator.
  *  <p>
@@ -145,11 +137,11 @@ import java.util.regex.Pattern;
  *  </pre>
  *  <p>
  *  <b>Differences with Scanner.</b>
- *  {@code StdIn} and {@link Scanner} are both designed to parse
+ *  {@code StdIn} and {@link Scanner} are both designed to parse 
  *  tokens and convert them to primitive types and strings.
  *  Some of the main differences are summarized below:
  *  <ul>
- *  <li> {@code StdIn} is a set of static methods and reads
+ *  <li> {@code StdIn} is a set of static methods and reads 
  *       reads input from only standard input. It is suitable for use before
  *       a programmer knows about objects.
  *       See {@link In} for an object-oriented version that handles
@@ -182,14 +174,14 @@ import java.util.regex.Pattern;
  *  to do anything to signal that the input is finished.
  *  <p>
  *  <b>Known bugs.</b>
- *  Java's UTF-8 encoding does not recognize the optional
+ *  Java's UTF-8 encoding does not recognize the optional 
  *  <a href = "http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4508058">byte-order mask</a>.
  *  If the input begins with the optional byte-order mask, {@code StdIn}
  *  will have an extra character {@code &#92;uFEFF} at the beginning.
  *  <p>
- *  <b>Reference.</b>
+ *  <b>Reference.</b> 
  *  For additional documentation,
- *  see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of
+ *  see <a href="http://introcs.cs.princeton.edu/15inout">Section 1.5</a> of   
  *  <em>Introduction to Programming in Java: An Interdisciplinary Approach</em>
  *  by Robert Sedgewick and Kevin Wayne.
  *
@@ -200,7 +192,7 @@ import java.util.regex.Pattern;
 public final class StdIn {
 
     /*** begin: section (1 of 2) of code duplicated from In to StdIn. */
-
+    
     // assume Unicode UTF-8 encoding
     private static final String CHARSET_NAME = "UTF-8";
 
@@ -220,16 +212,16 @@ public final class StdIn {
     /*** end: section (1 of 2) of code duplicated from In to StdIn. */
 
     private static Scanner scanner;
-
+ 
     // it doesn't make sense to instantiate this class
     private StdIn() { }
 
     //// begin: section (2 of 2) of code duplicated from In to StdIn,
     //// with all methods changed from "public" to "public static"
 
-    /**
+   /**
      * Returns true if standard input is empty (except possibly for whitespace).
-     * Use this method to know whether the next call to {@link #readString()},
+     * Use this method to know whether the next call to {@link #readString()}, 
      * {@link #readDouble()}, etc will succeed.
      *
      * @return {@code true} if standard input is empty (except possibly
@@ -239,7 +231,7 @@ public final class StdIn {
         return !scanner.hasNext();
     }
 
-    /**
+   /**
      * Returns true if standard input has a next line.
      * Use this method to know whether the
      * next call to {@link #readLine()} will succeed.
@@ -268,7 +260,7 @@ public final class StdIn {
     }
 
 
-    /**
+   /**
      * Reads and returns the next line, excluding the line separator if present.
      *
      * @return the next line, excluding the line separator if present;
@@ -295,13 +287,13 @@ public final class StdIn {
         scanner.useDelimiter(EMPTY_PATTERN);
         String ch = scanner.next();
         assert ch.length() == 1 : "Internal (Std)In.readChar() error!"
-                + " Please contact the authors.";
+            + " Please contact the authors.";
         scanner.useDelimiter(WHITESPACE_PATTERN);
         return ch.charAt(0);
-    }
+    }  
 
 
-    /**
+   /**
      * Reads and returns the remainder of the input, as a string.
      *
      * @return the remainder of the input, as a string
@@ -318,7 +310,7 @@ public final class StdIn {
     }
 
 
-    /**
+   /**
      * Reads the next token  and returns the {@code String}.
      *
      * @return the next {@code String}
@@ -328,7 +320,7 @@ public final class StdIn {
         return scanner.next();
     }
 
-    /**
+   /**
      * Reads the next token from standard input, parses it as an integer, and returns the integer.
      *
      * @return the next integer on standard input
@@ -339,7 +331,7 @@ public final class StdIn {
         return scanner.nextInt();
     }
 
-    /**
+   /**
      * Reads the next token from standard input, parses it as a double, and returns the double.
      *
      * @return the next double on standard input
@@ -350,7 +342,7 @@ public final class StdIn {
         return scanner.nextDouble();
     }
 
-    /**
+   /**
      * Reads the next token from standard input, parses it as a float, and returns the float.
      *
      * @return the next float on standard input
@@ -361,7 +353,7 @@ public final class StdIn {
         return scanner.nextFloat();
     }
 
-    /**
+   /**
      * Reads the next token from standard input, parses it as a long integer, and returns the long integer.
      *
      * @return the next long integer on standard input
@@ -372,7 +364,7 @@ public final class StdIn {
         return scanner.nextLong();
     }
 
-    /**
+   /**
      * Reads the next token from standard input, parses it as a short integer, and returns the short integer.
      *
      * @return the next short integer on standard input
@@ -383,7 +375,7 @@ public final class StdIn {
         return scanner.nextShort();
     }
 
-    /**
+   /**
      * Reads the next token from standard input, parses it as a byte, and returns the byte.
      *
      * @return the next byte on standard input
@@ -485,10 +477,10 @@ public final class StdIn {
             vals[i] = Double.parseDouble(fields[i]);
         return vals;
     }
-
+    
     //// end: section (2 of 2) of code duplicated from In to StdIn
-
-
+    
+    
     // do this once when StdIn is initialized
     static {
         resync();
@@ -500,13 +492,13 @@ public final class StdIn {
     private static void resync() {
         setScanner(new Scanner(new java.io.BufferedInputStream(System.in), CHARSET_NAME));
     }
-
+    
     private static void setScanner(Scanner scanner) {
         StdIn.scanner = scanner;
         StdIn.scanner.useLocale(LOCALE);
     }
 
-    /**
+   /**
      * Reads all remaining tokens, parses them as integers, and returns
      * them as an array of integers.
      * @return all remaining integers, as an array
@@ -518,7 +510,7 @@ public final class StdIn {
         return readAllInts();
     }
 
-    /**
+   /**
      * Reads all remaining tokens, parses them as doubles, and returns
      * them as an array of doubles.
      * @return all remaining doubles, as an array
@@ -530,7 +522,7 @@ public final class StdIn {
         return readAllDoubles();
     }
 
-    /**
+   /**
      * Reads all remaining tokens and returns them as an array of strings.
      * @return all remaining tokens, as an array of strings
      * @deprecated Replaced by {@link #readAllStrings()}.
